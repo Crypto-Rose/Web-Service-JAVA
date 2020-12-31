@@ -1,0 +1,17 @@
+<div class="jumbotron">
+    <h1 class="display-4">{{post.name}}</h1>
+    <p class="lead">{{post.description}}</p>
+    <hr class="my-4">
+    <p>{{post.observation}}</p>
+    <h4>Comment</h4>
+    <ul>
+        <li *ngFor="let c of post.comments">
+            <p>{{ c.comment }}</p>
+            <p><small><strong>Public for: {{ c.name}}</strong></small> </p>
+            <p>{{c.date | date }}</p>
+        </li>
+    </ul>
+    <button type="button" class="btn btn-primary" [routerLink]="['/post/',post.id]" >
+        Ver post
+    </button>      
+</div>
